@@ -1,7 +1,8 @@
 # npm-updater & npm-check-updates
-> https://www.npmjs.com/package/npm-check-updates
+## npm-updater
 > https://www.npmjs.com/package/npm-updater
 
+提示升级
 ```
 /**
  * check a package lastest version
@@ -19,3 +20,20 @@
  * @return {Object} - { name, version, current, type, pkg, options }, type: latest, major, minor, patch, prerelease, build, null
  */
  ```
+
+ ## npm-check-updates
+ > https://www.npmjs.com/package/npm-check-updates
+升级 package.json 中的依赖到最新版本
+```
+ncu
+ncu -u
+--filter and --reject options
+```
+
+### Module Use
+可以通过 require 引用
+```
+ncu.run({
+  // 命令行的 options 可以在这里进行使用
+});
+```
