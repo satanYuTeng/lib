@@ -74,5 +74,17 @@ var mg = new Glob(pattern, options, cb)
 ## Options
 所有 可以传入 miniMatch 的 options 也可以传入 Glob
 默认 false
+同时运行多个 glob 操作可以传入一个公共的、可复用的 `options` 对象
+* cwd root dot ...
+* 比较多的 options 使用中看文档
 
+## Comparisons to other fnmatch/glob implementations
+## Comments and Negation
+* # 和 ！修饰符会移除，使用 ignore 代替
 
+* 只允许使用正斜杠 / ：forward-slashes
+* 反斜杠（Back-slashes）用于匹配表达式中的特殊字符
+
+## race conditions
+受 竞争条件漏洞 影响
+在一个改动比较高频的文件系统中，不要依赖glob的搜索结果。
